@@ -12,6 +12,7 @@ dotenv.config();
 
 
 
+
 const app = express();
 
 app.use(
@@ -27,7 +28,10 @@ app.use(cookieParser());
 app.use("/api/auth", authRoutes);
 app.use("/api", tasksRoutes);
 
-if (process.env.NODE_ENV === "production") {
+
+
+
+/* if (process.env.NODE_ENV === "production") {
   import("path").then((path) => {
     app.use(express.static("client/dist"));
     
@@ -36,7 +40,12 @@ if (process.env.NODE_ENV === "production") {
       res.sendFile(path.default.resolve("client", "dist", "index.html"));
     });
   });
-}
+} */
+
+
+
+
+
 
 
 export default app;
